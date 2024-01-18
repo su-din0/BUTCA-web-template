@@ -1,8 +1,132 @@
 $primary-color: #ff0000;
+$dark-light: #141d2b;
+$dark: #111927;
+$light: #747881;
+
+$red: #f44336;
+$yellow: #ffeb3b;
+$green: #00ff00;
+
 
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Inter, sans-serif;
 }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: $dark-light;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    .logo {
+        h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    }
+
+    .nav-links {
+        ul {
+            display: flex;
+            list-style: none;
+            li {
+                margin-left: 2rem;
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    transition: color 0.3s ease;
+                }
+            }
+        }
+    }
+}
+
+main {
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        background-color: $dark-light;
+        color: #fff;    
+        height: 100vh;
+
+        .hero-text {
+            max-width: 50%;
+
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .terminal-container {
+            max-width: 45%;
+
+            .terminal {
+                background-color: $dark;
+                color: #fff;
+                padding: 1rem;
+                border-radius: 15px;
+                .terminal-header {
+                    display: flex;
+                    margin-bottom: 1rem;
+
+                    .terminal-header-button {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        margin-right: 5px;
+
+                        &.red {
+                            background-color: $red;
+                        }
+
+                        &.yellow {
+                            background-color: $yellow;
+                        }
+
+                        &.green {
+                            background-color: #4caf50;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .terminal-body {
+                    .command {
+                        display: flex;
+                        .prefix {
+                            font-weight: bold;
+                            margin-right: .5rem;
+                        }
+                        p {
+                            font-size: .9rem;
+                            font-family: "Fira Code", monospace;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../fonts/Inter-VariableFont_slnt,wght.ttf");
+    font-weight: 400;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap')

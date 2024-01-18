@@ -1,5 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #141d2b;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+nav .logo h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+nav .nav-links ul {
+  display: flex;
+  list-style: none;
+}
+nav .nav-links ul li {
+  margin-left: 2rem;
+}
+nav .nav-links ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+main .hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #141d2b;
+  color: #fff;
+  height: 100vh;
+}
+main .hero .hero-text {
+  max-width: 50%;
+}
+main .hero .hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+main .hero .hero-text p {
+  font-size: 1.2rem;
+}
+main .hero .terminal-container {
+  max-width: 45%;
+}
+main .hero .terminal-container .terminal {
+  background-color: #111927;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+}
+main .hero .terminal-container .terminal .terminal-header {
+  display: flex;
+  margin-bottom: 1rem;
+}
+main .hero .terminal-container .terminal .terminal-header .terminal-header-button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+main .hero .terminal-container .terminal .terminal-header .terminal-header-button.red {
+  background-color: #f44336;
+}
+main .hero .terminal-container .terminal .terminal-header .terminal-header-button.yellow {
+  background-color: #ffeb3b;
+}
+main .hero .terminal-container .terminal .terminal-header .terminal-header-button.green {
+  background-color: #4caf50;
+}
+main .hero .terminal-container .terminal .terminal-header .terminal-header-button:hover {
+  cursor: pointer;
+}
+main .hero .terminal-container .terminal .terminal-body .command {
+  display: flex;
+}
+main .hero .terminal-container .terminal .terminal-body .command .prefix {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+main .hero .terminal-container .terminal .terminal-body .command p {
+  font-size: 0.9rem;
+  font-family: "Fira Code", monospace;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("../fonts/Inter-VariableFont_slnt,wght.ttf");
+  font-weight: 400;
 }/*# sourceMappingURL=app.css.map */

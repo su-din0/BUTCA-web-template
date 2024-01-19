@@ -38,6 +38,9 @@ a.btn {
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
+a.btn.sm {
+  padding: 0.75rem 1.5rem;
+}
 a.btn.btn-primary {
   background-color: #4caf50;
   color: #fff;
@@ -63,6 +66,11 @@ nav {
   background-color: #141d2b;
   color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
 }
 nav .logo h4 {
   font-size: 1.5rem;
@@ -114,10 +122,26 @@ main .hero {
   color: #fff;
   height: 100vh;
 }
+@media (max-width: 768px) {
+  main .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+  main .hero .hero-text,
+  main .hero .terminal-container {
+    max-width: 100%;
+  }
+}
 main .hero .hero-text {
   max-width: 45%;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 768px) {
+  main .hero .hero-text {
+    max-width: 90%;
+  }
 }
 main .hero .hero-text h1 {
   font-size: 2.5rem;
@@ -134,10 +158,21 @@ main .hero .hero-text .hero-buttons {
   margin-top: 2rem;
   gap: 1rem;
 }
+@media (max-width: 768px) {
+  main .hero .hero-text .hero-buttons {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+}
 main .hero .terminal-container {
   max-width: 45%;
   width: 700px;
   max-width: 700px;
+}
+@media (max-width: 768px) {
+  main .hero .terminal-container {
+    width: 100%;
+  }
 }
 main .hero .terminal-container .terminal {
   background-color: #111927;
@@ -194,6 +229,11 @@ main .hero .scrolldown-wrapper {
   bottom: 0;
   transform: translate(-50%, -50%);
 }
+@media (max-width: 768px) {
+  main .hero .scrolldown-wrapper {
+    display: none;
+  }
+}
 main .hero .scrolldown-wrapper .scrolldown {
   border: 2px solid #FFFFFF;
   border-radius: 30px;
@@ -225,6 +265,103 @@ main .hero .scrolldown-wrapper .scrolldown .scrolldown-p2 {
     transform: translate(0, 8px);
   }
 }
+main .about {
+  padding: 2rem;
+  background-color: #141d2b;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  main .about {
+    padding: 1rem;
+  }
+}
+main .about .about-text {
+  max-width: 45%;
+  padding: 2rem;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  main .about .about-text {
+    max-width: 90%;
+    padding: 1rem;
+  }
+}
+main .about .about-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+main .about .about-text p:nth-child(1) {
+  text-align: left;
+  transform: translateX(-10%);
+}
+main .about .about-text p:nth-child(2) {
+  transform: translateX(10%);
+  text-align: right;
+}
+@media (max-width: 768px) {
+  main .about .about-text p:nth-child(1), main .about .about-text p:nth-child(2) {
+    transform: translateX(0);
+    text-align: center;
+  }
+}
+main .about hr {
+  border: 0;
+  height: 2px;
+  background: #111927;
+  width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  main .about hr {
+    width: 90%;
+  }
+}
+main .about .roadmap-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  main .about .roadmap-container {
+    padding: 1rem;
+  }
+}
+main .about .roadmap-container .roadmap-event {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .about .roadmap-container .roadmap-event h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+main .about .roadmap-container .roadmap-event p {
+  font-size: 1.2rem;
+}
+main .about .roadmap-container .roadmap-connection {
+  width: 4px;
+  height: 30px;
+  background-color: #4caf50;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+}
+main .services {
+  padding: 2rem;
+  color: #fff;
+  background-color: #111927;
+}
 main .services .container {
   display: flex;
   flex-direction: row;
@@ -243,14 +380,17 @@ main .services .container .service {
   gap: 0.5rem;
   padding: 1.5rem;
   border-radius: 15px;
-  background-color: #111927;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
   width: 300px;
+  background-color: #141d2b;
 }
 main .services .container .service .service-icon {
   display: flex;
   margin: auto;
   padding: 1rem;
+  border-radius: 50%;
+  background-color: #111927;
 }
 main .services .container .service .service-icon svg {
   width: 50px;
@@ -266,4 +406,88 @@ main .services .container .service .service-description {
   font-size: 1rem;
   text-align: center;
   height: 100%;
+}
+main .contact {
+  padding: 2rem;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  main .contact {
+    padding: 1rem;
+  }
+}
+main .contact .contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+@media (max-width: 768px) {
+  main .contact .contact-form {
+    width: 90%;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+}
+main .contact .contact-form .form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  main .contact .contact-form .form-row {
+    flex-direction: column;
+  }
+}
+main .contact .contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+main .contact .contact-form .form-group label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+main .contact .contact-form .form-group input, main .contact .contact-form .form-group textarea {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  color: #141d2b;
+  background-color: whitesmoke;
+  font-size: 1rem;
+  font-family: "Fira Code", monospace;
+}
+main .contact .contact-form .form-group input:focus, main .contact .contact-form .form-group textarea:focus {
+  outline: none;
+}
+main .contact .contact-form .form-group textarea {
+  resize: none;
+  height: 150px;
+}
+main .contact .contact-form button {
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+}
+main .contact .contact-form button:hover {
+  background-color: transparent;
+  border: 1px solid #4caf50;
+  color: #4caf50;
 }/*# sourceMappingURL=app.css.map */

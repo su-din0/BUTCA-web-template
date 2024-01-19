@@ -5,7 +5,7 @@ $light: #747881;
 
 $red: #f44336;
 $yellow: #ffeb3b;
-$green: #00ff00;
+$green: #4caf50;
 
 
 
@@ -13,8 +13,63 @@ $green: #00ff00;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Inter, sans-serif;
+    font-family: "Inter", sans-serif;
 }
+
+body {
+    background-color: $dark-light;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+span {
+    &.green {
+        color: $green;
+        font-weight: bold;    
+    }
+    &.right {
+        text-align: right;
+    }
+    &.bold {
+        font-weight: bolder;
+    }
+}
+
+a {
+    text-decoration: none;
+    &.btn {
+        padding: 1rem 1.5rem;
+        border-radius: 5px;
+        border: none;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    
+        &.btn-primary {
+            background-color: $green;
+            color: #fff;
+    
+            &:hover {
+                background-color: transparent;
+                border: 1px solid $green;
+                color: $green;
+            }
+        }
+    
+        &.btn-secondary {
+            color: $green;
+            transition: background-color 0.3s ease;
+            &:hover {
+                color: #fff;
+                background-color: $green;
+            }
+        }
+    }
+}
+
 
 nav {
     display: flex;
@@ -22,25 +77,34 @@ nav {
     padding: 1rem 2rem;
     background-color: $dark-light;
     color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     .logo {
         h4 {
             font-size: 1.5rem;
             font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
     }
 
     .nav-links {
+        display: flex;
+        align-items: center;
+        
         ul {
             display: flex;
             list-style: none;
             li {
-                margin-left: 2rem;
+                margin-left: 2.5rem;
                 a {
                     text-decoration: none;
                     color: #fff;
-                    transition: color 0.3s ease;
+                    font-size: 1.1rem;
+                    transition: color 0.3s ease, transform 0.3s ease;
+                    &:hover {
+                        color: $green;
+                    }
                 }
             }
         }
@@ -48,17 +112,37 @@ nav {
 }
 
 main {
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #fff;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:after {
+            content: '';
+            width: 100px;
+            height: 5px;
+            background-color: $green;
+            margin-top: 0.5rem;
+        }
+    }
+    
+
+
     .hero {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding: 2rem;
-        background-color: $dark-light;
-        color: #fff;    
-        height: 100vh;
-
+        color: #fff;
+        height: 100vh;      
         .hero-text {
-            max-width: 50%;
-
+            max-width: 45%;
+            display: flex;
+            flex-direction: column;
             h1 {
                 font-size: 2.5rem;
                 margin-bottom: 1rem;
@@ -66,12 +150,22 @@ main {
 
             p {
                 font-size: 1.2rem;
+                margin-bottom: 1rem;
+                display: block;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: row;
+                margin-top: 2rem;
+                gap: 1rem;
             }
         }
 
         .terminal-container {
             max-width: 45%;
-
+            width: 700px;
+            max-width: 700px;
             .terminal {
                 background-color: $dark;
                 color: #fff;
@@ -89,14 +183,23 @@ main {
 
                         &.red {
                             background-color: $red;
+                            &:hover {
+                                background-color: darken($red, 10%);
+                            }
                         }
 
                         &.yellow {
                             background-color: $yellow;
+                            &:hover {
+                                background-color: darken($yellow, 10%);
+                            }
                         }
 
                         &.green {
-                            background-color: #4caf50;
+                            background-color: $green;
+                            &:hover {
+                                background-color: darken($green, 10%);
+                            }
                         }
 
                         &:hover {
@@ -120,13 +223,105 @@ main {
                 }
             }
         }
+        .scrolldown-wrapper {
+            left: 50%;
+            position: absolute;
+            text-align: center;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+            .scrolldown {
+                border: 2px solid #FFFFFF;
+                border-radius: 30px;
+                height: 46px;
+                margin: 0 auto 8px;
+                text-align: center;
+                width: 30px;
+                .scrolldown-p1, .scrolldown-p2 {
+                    animation-duration: 1.5s;
+                    animation-name: scrolldown;
+                    animation-iteration-count: infinite;
+                    fill: #FFFFFF;
+                }
+                .scrolldown-p2 {
+                    animation-delay: .75s;
+                }
+                
+                @keyframes scrolldown {
+                    0% {
+                        opacity: 0;
+                        transform: translate(0, -8px);
+                    }
+                    50% {
+                        opacity: 1;
+                        transform: translate(0, 0);
+                    }
+                    100% {
+                        opacity: 0;
+                        transform: translate(0, 8px);
+                    }
+                }
+        
+            }
+            
+        }
+
+    }
+
+    .about {
+
+    }
+
+    .services {
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            margin: 0 auto;
+            gap: 2rem;
+            padding: 2rem;
+            flex-wrap: wrap;
+    
+            .service {
+                display: grid;
+                grid-template-rows: auto 1fr auto;
+                align-items: start;
+                justify-content: center;
+                gap: .5rem;
+                padding: 1.5rem;
+                border-radius: 15px;
+                background-color: $dark;
+                color: #fff;
+                width: 300px;
+    
+                .service-icon {
+                    display: flex;
+                    margin: auto;
+                    padding: 1rem;
+
+                    svg {
+                        width: 50px;
+                        height: 50px;
+                        color: $green;
+                    }
+                }
+    
+                .service-title {
+                    margin: auto;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+    
+                .service-description {
+                    font-size: 1rem;
+                    text-align: center;
+                    height: 100%;
+                }
+            }
+        }
     }
 }
 
-@font-face {
-    font-family: Inter;
-    src: url("../fonts/Inter-VariableFont_slnt,wght.ttf");
-    font-weight: 400;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');

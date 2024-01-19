@@ -1,9 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #141d2b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+span.green {
+  color: #4caf50;
+  font-weight: bold;
+}
+span.right {
+  text-align: right;
+}
+span.bold {
+  font-weight: bolder;
+}
+
+a {
+  text-decoration: none;
+}
+a.btn {
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+a.btn.btn-primary {
+  background-color: #4caf50;
+  color: #fff;
+}
+a.btn.btn-primary:hover {
+  background-color: transparent;
+  border: 1px solid #4caf50;
+  color: #4caf50;
+}
+a.btn.btn-secondary {
+  color: #4caf50;
+  transition: background-color 0.3s ease;
+}
+a.btn.btn-secondary:hover {
+  color: #fff;
+  background-color: #4caf50;
 }
 
 nav {
@@ -12,35 +62,62 @@ nav {
   padding: 1rem 2rem;
   background-color: #141d2b;
   color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 nav .logo h4 {
   font-size: 1.5rem;
   font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+nav .nav-links {
+  display: flex;
+  align-items: center;
 }
 nav .nav-links ul {
   display: flex;
   list-style: none;
 }
 nav .nav-links ul li {
-  margin-left: 2rem;
+  margin-left: 2.5rem;
 }
 nav .nav-links ul li a {
   text-decoration: none;
   color: #fff;
-  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+nav .nav-links ul li a:hover {
+  color: #4caf50;
 }
 
+main h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main h2:after {
+  content: "";
+  width: 100px;
+  height: 5px;
+  background-color: #4caf50;
+  margin-top: 0.5rem;
+}
 main .hero {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 2rem;
-  background-color: #141d2b;
   color: #fff;
   height: 100vh;
 }
 main .hero .hero-text {
-  max-width: 50%;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
 }
 main .hero .hero-text h1 {
   font-size: 2.5rem;
@@ -48,9 +125,19 @@ main .hero .hero-text h1 {
 }
 main .hero .hero-text p {
   font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+main .hero .hero-text .hero-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  gap: 1rem;
 }
 main .hero .terminal-container {
   max-width: 45%;
+  width: 700px;
+  max-width: 700px;
 }
 main .hero .terminal-container .terminal {
   background-color: #111927;
@@ -71,11 +158,20 @@ main .hero .terminal-container .terminal .terminal-header .terminal-header-butto
 main .hero .terminal-container .terminal .terminal-header .terminal-header-button.red {
   background-color: #f44336;
 }
+main .hero .terminal-container .terminal .terminal-header .terminal-header-button.red:hover {
+  background-color: #ea1c0d;
+}
 main .hero .terminal-container .terminal .terminal-header .terminal-header-button.yellow {
   background-color: #ffeb3b;
 }
+main .hero .terminal-container .terminal .terminal-header .terminal-header-button.yellow:hover {
+  background-color: #ffe608;
+}
 main .hero .terminal-container .terminal .terminal-header .terminal-header-button.green {
   background-color: #4caf50;
+}
+main .hero .terminal-container .terminal .terminal-header .terminal-header-button.green:hover {
+  background-color: #3d8b40;
 }
 main .hero .terminal-container .terminal .terminal-header .terminal-header-button:hover {
   cursor: pointer;
@@ -91,9 +187,83 @@ main .hero .terminal-container .terminal .terminal-body .command p {
   font-size: 0.9rem;
   font-family: "Fira Code", monospace;
 }
-
-@font-face {
-  font-family: Inter;
-  src: url("../fonts/Inter-VariableFont_slnt,wght.ttf");
-  font-weight: 400;
+main .hero .scrolldown-wrapper {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+}
+main .hero .scrolldown-wrapper .scrolldown {
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  height: 46px;
+  margin: 0 auto 8px;
+  text-align: center;
+  width: 30px;
+}
+main .hero .scrolldown-wrapper .scrolldown .scrolldown-p1, main .hero .scrolldown-wrapper .scrolldown .scrolldown-p2 {
+  animation-duration: 1.5s;
+  animation-name: scrolldown;
+  animation-iteration-count: infinite;
+  fill: #FFFFFF;
+}
+main .hero .scrolldown-wrapper .scrolldown .scrolldown-p2 {
+  animation-delay: 0.75s;
+}
+@keyframes scrolldown {
+  0% {
+    opacity: 0;
+    transform: translate(0, -8px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 8px);
+  }
+}
+main .services .container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+main .services .container .service {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 15px;
+  background-color: #111927;
+  color: #fff;
+  width: 300px;
+}
+main .services .container .service .service-icon {
+  display: flex;
+  margin: auto;
+  padding: 1rem;
+}
+main .services .container .service .service-icon svg {
+  width: 50px;
+  height: 50px;
+  color: #4caf50;
+}
+main .services .container .service .service-title {
+  margin: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+main .services .container .service .service-description {
+  font-size: 1rem;
+  text-align: center;
+  height: 100%;
 }/*# sourceMappingURL=app.css.map */

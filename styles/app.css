@@ -29,7 +29,8 @@ span.bold {
 a {
   text-decoration: none;
 }
-a.btn {
+
+.btn {
   padding: 1rem 1.5rem;
   border-radius: 5px;
   border: none;
@@ -38,23 +39,23 @@ a.btn {
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
-a.btn.sm {
+.btn.sm {
   padding: 0.75rem 1.5rem;
 }
-a.btn.btn-primary {
+.btn.btn-primary {
   background-color: #4caf50;
   color: #fff;
 }
-a.btn.btn-primary:hover {
+.btn.btn-primary:hover {
   background-color: transparent;
   border: 1px solid #4caf50;
   color: #4caf50;
 }
-a.btn.btn-secondary {
+.btn.btn-secondary {
   color: #4caf50;
   transition: background-color 0.3s ease;
 }
-a.btn.btn-secondary:hover {
+.btn.btn-secondary:hover {
   color: #fff;
   background-color: #4caf50;
 }
@@ -429,7 +430,7 @@ main .contact .contact-form {
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
-  width: 40%;
+  max-width: 40%;
   margin: 0 auto;
   margin-top: 5rem;
 }
@@ -493,4 +494,71 @@ main .contact .contact-form button:hover {
   background-color: transparent;
   border: 1px solid #4caf50;
   color: #4caf50;
+}
+main .newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  main .newsletter {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+main .newsletter .newsletter-content {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  main .newsletter .newsletter-content {
+    width: 90%;
+    text-align: center;
+  }
+}
+main .newsletter .newsletter-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+main .newsletter .newsletter-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+main .newsletter .newsletter-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  main .newsletter .newsletter-content form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+main .newsletter .newsletter-content form input[type=email] {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  color: #141d2b;
+}
+main .newsletter .newsletter-content form input[type=email]:focus {
+  outline: none;
+}
+main .newsletter .newsletter-content form .error {
+  color: #f44336;
+  font-size: 0.8rem;
+}
+main .newsletter .newsletter-content form .success {
+  color: #4caf50;
+  font-size: 0.8rem;
 }/*# sourceMappingURL=app.css.map */

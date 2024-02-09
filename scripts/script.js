@@ -51,4 +51,4 @@ function addCommand() {
     }
 }
 
-const intervalId = setInterval(addCommand, Math.random() * 3000 + 2000);
+const intervalId = setInterval(addCommand, Math.random() * 2000 + 1000);

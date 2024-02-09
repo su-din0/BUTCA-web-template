@@ -6,8 +6,6 @@ $red: #f44336;
 $yellow: #ffeb3b;
 $green: #4caf50;
 
-
-
 * {
     padding: 0;
     margin: 0;
@@ -597,6 +595,42 @@ main {
                 }
 
             }
+        }
+    }
+}
+
+footer {
+    color: #fff;
+    padding: 2rem 0;
+
+    .footer-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        nav {
+            ul {
+                display: flex;
+                gap: 2rem;
+                list-style: none;
+
+                li {
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $green;
+                        }
+                    }
+                }
+            }
+        }
+
+        p {
+            font-size: 0.875rem;
         }
     }
 }

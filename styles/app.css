@@ -561,4 +561,31 @@ main .newsletter .newsletter-content form .error {
 main .newsletter .newsletter-content form .success {
   color: #4caf50;
   font-size: 0.8rem;
+}
+
+footer {
+  color: #fff;
+  padding: 2rem 0;
+}
+footer .footer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+footer .footer-text nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+footer .footer-text nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+footer .footer-text nav ul li a:hover {
+  color: #4caf50;
+}
+footer .footer-text p {
+  font-size: 0.875rem;
 }/*# sourceMappingURL=app.css.map */

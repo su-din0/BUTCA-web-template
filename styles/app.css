@@ -60,7 +60,7 @@ a {
   background-color: #4caf50;
 }
 
-nav {
+header nav {
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
@@ -69,34 +69,34 @@ nav {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 768px) {
-  nav {
+  header nav {
     display: none;
   }
 }
-nav .logo h4 {
+header nav .logo h4 {
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-nav .nav-links {
+header nav .nav-links {
   display: flex;
   align-items: center;
 }
-nav .nav-links ul {
+header nav .nav-links ul {
   display: flex;
   list-style: none;
 }
-nav .nav-links ul li {
+header nav .nav-links ul li {
   margin-left: 2.5rem;
 }
-nav .nav-links ul li a {
+header nav .nav-links ul li a {
   text-decoration: none;
   color: #fff;
   font-size: 1.1rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-nav .nav-links ul li a:hover {
+header nav .nav-links ul li a:hover {
   color: #4caf50;
 }
 
@@ -430,9 +430,9 @@ main .contact .contact-form {
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
-  max-width: 40%;
   margin: 0 auto;
   margin-top: 5rem;
+  width: 600px;
 }
 @media (max-width: 768px) {
   main .contact .contact-form {
@@ -564,8 +564,14 @@ main .newsletter .newsletter-content form .success {
 }
 
 footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
   color: #fff;
-  padding: 2rem 0;
+  background-color: #111927;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
 }
 footer .footer-text {
   display: flex;
@@ -573,6 +579,9 @@ footer .footer-text {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+footer .footer-text nav {
+  margin-bottom: 1rem;
 }
 footer .footer-text nav ul {
   display: flex;
@@ -588,4 +597,41 @@ footer .footer-text nav ul li a:hover {
 }
 footer .footer-text p {
   font-size: 0.875rem;
-}/*# sourceMappingURL=app.css.map */
+}
+
+/*
+footer {
+    color: #fff;
+    padding: 2rem 0;
+
+    .footer-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        nav {
+            ul {
+                display: flex;
+                gap: 2rem;
+                list-style: none;
+
+                li {
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $green;
+                        }
+                    }
+                }
+            }
+        }
+
+        p {
+            font-size: 0.875rem;
+        }
+    }
+}*//*# sourceMappingURL=app.css.map */

@@ -14,7 +14,7 @@
             </div>
             <div class="nav-links">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About us</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -31,14 +31,38 @@
                 <p>Subscribe to our newsletter to get the latest <span class="green">news and updates!</span></p>
                 <form method="POST">
                     <input type="email" name="email" placeholder="Enter your email address">
-                    <!-- <div class="error">Please, enter a valid address.</div>
-                    <div class="success">Your address is valid.</div> -->
+                    <div id="result"></div>
                     <button type="submit" name="submit" class="btn sm btn-primary">Subscribe</button>
                 </form>
             </div>
         </section>
     </main>
-   
-    <script src="scripts/script.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const timePre = performance.now();
+            const email = document.querySelector('input[name="email"]').value;
+            const resultDiv = document.querySelector('#result');
+
+            if (/^([a-zA-Z0-9])(([\-.]|[_]+)?([a-zA-Z0-9]+))*(@){1}[a-z0-9]+[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$/.test(email)) {
+                resultDiv.textContent = 'Your address was successfully added to our newsletter. Thank you!';
+                resultDiv.style.color = 'green';
+            } else {
+                resultDiv.textContent = 'Please, enter a valid address.';
+                resultDiv.style.color = 'red';
+            }
+
+            const timePost = performance.now();
+            const execTime = timePost - timePre;
+
+            if(execTime > 1000) {
+                resultDiv.textContent = 'An error occurred. Please, try again.';
+                resultDiv.style.color = 'red';
+            }
+
+            console.log("Execution time of script = " + execTime + " ms");
+        });
+    </script>
 </body>
 </html>
